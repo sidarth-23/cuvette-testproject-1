@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dangrek&display=swap"
+      rel="stylesheet"
+    />
+    <title>Rock Paper Scissors</title>
+  </head>
+  <body>
+    <div class="main-body">
+      <header>
+        <div class="title">
+          <h1>Rock <br />Paper <br />Scissors</h1>
+        </div>
+        <div class="score-board">
+          <div class="score-tag">
+            <p class="score-player">Computer <br />Score</p>
+            <p class="score-number" id="scored-comp">0</p>
+          </div>
+          <div class="score-tag">
+            <p class="score-player">Your <br />Score</p>
+            <p class="score-number" id="scored-user">0</p>
+          </div>
+        </div>
+      </header>
+      <main>
+        <!-- <div class="choose-option">
+        <div class="options-bg">
+                  <img src="assets/Simple_triangle.svg" alt="">
+        </div>
+        <div class="choose-buttons">
+          <button class="choose-button rock" id="rock">
+            <i class="fa-solid fa-hand-fist fa-4x"></i>
+          </button>
+          <button class="choose-button paper" id="paper">
+            <i class="fa-solid fa-hand fa-4x"></i>
+          </button>
+          <button class="choose-button scissor" id="scissor">
+            <i class="fa-solid fa-hand-peace fa-4x"></i>
+          </button>
+        </div>
+      </div> -->
+        <div class="results">
+          <div class="winner winner-comp">
+            <div class="winner-c1">
+              <div class="winner-c2"></div>
+            </div>
+          </div>
+          <div class="pick user-pick scissor">
+            <p>You picked</p>
+            <i class="fa-solid fa-hand-peace fa-4x"></i>
+          </div>
+          <div class="pick-result">
+            <h2>You <span class="conclude">Win</span></h2>
+            <p>Against Pc</p>
+            <button class="reset-btn">Play Again</button>
+          </div>
+          <div class="pick comp-pick rock">
+            <p>Pc Picked</p>
+            <i class="fa-solid fa-hand-fist fa-4x"></i>
+          </div>
+        </div>
+      </main>
+      <div class="popup">
+        <button class="exit-btn">X</button>
+        <div class="rules-content">
+          <h2>Game Rules</h2>
+          <ul>
+            <li>
+              Rock beats scissors, scissors beat paper, and paper beats rock.
+            </li>
+            <li>
+              Agree ahead of time whether you’ll count off “rock, paper,
+              scissors, shoot” or just “rock, paper, scissors.”
+            </li>
+            <li>
+              Use rock, paper, scissors to settle minor decisions or simply play
+              to pass the time
+            </li>
+            <li>
+              If both players lay down the same hand, each player lays down
+              another hand
+            </li>
+          </ul>
+        </div>
+      </div>
+      <footer>
+        <div class="footer-container">
+          <button class="footer-btn" id="rules-btn">Rules</button>
+          <button class="footer-btn" id="next-btn">Next</button>
+        </div>
+      </footer>
+    </div>
+    <script
+      src="https://kit.fontawesome.com/a9e92453ee.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="script.js"></script>
+  </body>
+</html>
