@@ -2,10 +2,9 @@
 const storedUserScore = localStorage.getItem("userScore")
   ? localStorage.getItem("userScore")
   : localStorage.setItem("userScore", "0")
-const storedCompScore = localStorage.getItem("userScore")
+const storedCompScore = localStorage.getItem("compScore")
   ? localStorage.getItem("compScore")
   : localStorage.setItem("compScore", "0")
-const body = document.querySelector("body")
 
 // Setting json for rock, paper, scissor;
 const data = {
@@ -182,6 +181,8 @@ const resultsPageContent = (userAns, pcAns, winner) => {
       </div>`
 }
 
+
+// Rendering functions
 function initialPageRender() {
   const mainpage = document.querySelector(".main-body")
   if (mainpage) {
