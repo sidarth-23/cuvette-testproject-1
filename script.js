@@ -5,6 +5,7 @@ const storedUserScore = localStorage.getItem("userScore")
 const storedCompScore = localStorage.getItem("compScore")
   ? localStorage.getItem("compScore")
   : localStorage.setItem("compScore", "0")
+const body = document.querySelector("body")
 
 // Setting json for rock, paper, scissor;
 const data = {
