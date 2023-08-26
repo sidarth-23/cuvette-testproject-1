@@ -1,8 +1,5 @@
 /* 
 CSS Reset
-http://meyerweb.com/eric/tools/css/reset/ 
-v2.0 | 20110126
-License: none (public domain)
 */
 
 html,
@@ -93,7 +90,7 @@ video {
   font: inherit;
   vertical-align: baseline;
 }
-/* HTML5 display-role reset for older browsers */
+
 article,
 aside,
 details,
@@ -144,12 +141,16 @@ table {
   opacity: 0;
 }
 
-.main-body {
+body {
   background-color: var(--primary-bg);
-  position: relative;
   font-family: "Roboto", sans-serif;
   text-transform: uppercase;
   color: var(--primary-txt-clr);
+}
+
+.main-body {
+  position: relative;
+
   box-sizing: border-box;
   height: 100vh;
   padding: 20px;
@@ -267,6 +268,13 @@ main {
   border: 10px solid #bd00ff;
 }
 
+.main-container {
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .results {
   display: grid;
   grid-template-columns: 1fr 2fr 1fr;
@@ -378,25 +386,24 @@ main {
   width: 278px;
   height: 325px;
 
-  h2{
+  h2 {
     padding-bottom: 20px;
   }
 
-  button {
+  .exit-btn {
     position: absolute;
     top: 0;
     right: 0;
     color: #fff;
-    font-family: Dangrek;
-    font-size: 44px;
     font-weight: 400;
     background-color: red;
+    height: 70px;
+    width: 70px;
     border-radius: 50%;
     border: 5px solid white;
     transform: translate(50%, -50%);
-    p{
-      margin: 0;
-    }
+    font-family: cursive;
+    font-size: 44px;
   }
 
   .rules-content {
@@ -447,3 +454,87 @@ footer {
 #next-btn {
   margin-left: 20px;
 }
+
+// Hurray Page
+.img-container {
+  position: relative;
+  height: 300px;
+  width: 500px;
+  * {
+    position: absolute;
+  }
+  .prize {
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+  }
+  .star-1 {
+    top: 75%;
+    left: 85%;
+    transform: translate(-50%, -50%);
+  }
+  .star-2 {
+    top: 30%;
+    left: 82%;
+    transform: scale(0.3) translate(-50%, -50%);
+  }
+  .star-3 {
+    top: 0;
+    left: 70%;
+    transform: scale(0.7) translate(-50%, -20%);
+  }
+  .star-4 {
+    top: 10%;
+    left: 40%;
+    transform: scale(0.3) translate(-50%, -50%);
+  }
+  .star-5 {
+    top: 0%;
+    left: 15%;
+    transform: scale(0.3) translate(-50%, -50%);
+  }
+  .star-6 {
+    top: 23%;
+    left: 10%;
+    transform: scale(0.6) translate(-50%, -50%);
+  }
+  .star-7 {
+    top: 60%;
+    left: 5%;
+    transform: scale(0.9) translate(-50%, -50%);
+  }
+  .star-8 {
+    top: 80%;
+    left: 10%;
+    transform: scale(0.3) translate(-50%, -50%);
+  }
+}
+
+.won-end {
+  h2 {
+    text-align: center;
+    font-size: 91px;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: 9.1px;
+  }
+  p {
+    text-align: center;
+    font-size: 41px;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: 4.1px;
+  }
+}
+  .win-reset-btn {
+    color: #6b6b6b;
+    font-family: Roboto;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: 1.5px;
+    padding: 16px 36px;
+    border-radius: 9px;
+    border: none;
+  }
