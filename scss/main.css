@@ -145,6 +145,18 @@ table {
   opacity: 0;
 }
 
+.fade-in {
+  animation: fadeIn ease 1s;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 body {
   background-color: var(--primary-bg);
   font-family: "Roboto", sans-serif;
@@ -340,25 +352,42 @@ main {
   border: none;
 }
 
+@keyframes winnerAnimation {
+  0%, 100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
 .winner {
+  display: block;
   z-index: 0;
   position: absolute;
   height: 350px;
   width: 350px;
-  background: rgba(46, 154, 37, 0.39);
-  box-shadow: 0px 1px 62px 0px rgba(0, 0, 0, 0.13);
   border-radius: 50%;
 }
 .winner .winner-c1 {
+  position: relative;
+  width: 350px;
+  height: 350px;
+  border-radius: 50%;
+  background: rgba(46, 154, 37, 0.39);
+  z-index: -1;
+  animation: winnerAnimation 2s ease infinite;
+}
+.winner .winner-c2 {
   position: relative;
   width: 300px;
   height: 300px;
   border-radius: 50%;
   background-color: rgba(29, 168, 43, 0.79);
   transform: translate(25px, 25px);
-  z-index: -1;
+  z-index: -2;
+  animation: winnerAnimation 2s ease infinite;
 }
-.winner .winner-c2 {
+.winner .winner-c3 {
   opacity: 0.5;
   position: relative;
   width: 250px;
@@ -366,7 +395,8 @@ main {
   border-radius: 50%;
   background-color: #3b6720;
   transform: translate(25px, 25px);
-  z-index: -2;
+  z-index: -3;
+  animation: winnerAnimation 2s ease infinite;
 }
 
 .winner-user {

@@ -160,7 +160,9 @@ const resultsPageContent = (userAns, pcAns, winner) => {
   <div class="results">
         <div class="winner ${tempWin.winnerTag} ${tempWin.isHidden}">
           <div class="winner-c1">
-            <div class="winner-c2"></div>
+            <div class="winner-c2">
+              <div class="winner-c3"></div>
+            </div>
           </div>
         </div>
         <div class="pick user-pick scissor">
@@ -182,7 +184,6 @@ const resultsPageContent = (userAns, pcAns, winner) => {
       </div>`
 }
 
-
 // Rendering functions
 function initialPageRender() {
   const mainpage = document.querySelector(".main-body")
@@ -193,14 +194,34 @@ function initialPageRender() {
   document.querySelector("main").insertAdjacentHTML("afterbegin", optionTxt)
 }
 
-function resultsPageRender(resultsPageText) {
+const nextBtn = document.querySelector(".next-btn")
+if (nextBtn) {
+  nextBtn.remove()
+}
+
+function resultsPageRender(winCheck, resultsPageText) {
+  if (winCheck.winText === "Win") {
+    localStorage.setItem(
+      "userScore",
+      String(Number(localStorage.getItem("userScore")) + 1)
+    )
+  } else if (winCheck.winText === "Lose") {
+    localStorage.setItem(
+      "compScore",
+      String(Number(localStorage.getItem("compScore")) + 1)
+    )
+  }
+  scoreComp.textContent = localStorage.getItem('compScore')
+  scoreUser.textContent = localStorage.getItem('userScore')
   document.querySelector(".page-1").remove()
   document
     .querySelector("main")
     .insertAdjacentHTML("afterbegin", resultsPageText)
-  document
-    .querySelector(".footer-container")
-    .insertAdjacentHTML("beforeend", nextBtnTxt)
+  if (winCheck.winText === "Win") {
+    document
+      .querySelector(".footer-container")
+      .insertAdjacentHTML("beforeend", nextBtnTxt)
+  }
 }
 
 function resetRender() {
@@ -211,30 +232,8 @@ function resetRender() {
 }
 
 function nextWinner(winCheck) {
-  if (winCheck.winText === "Win") {
-    localStorage.setItem(
-      "userScore",
-      String(Number(localStorage.getItem("userScore")) + 1)
-    )
-    document.querySelector(".main-body").remove()
-    body.insertAdjacentHTML("afterbegin", endPageTxt)
-  } else if (winCheck.winText === "Lose") {
-    localStorage.setItem(
-      "compScore",
-      String(Number(localStorage.getItem("compScore")) + 1)
-    )
-    resetRender()
-    document.querySelector("#scored-user").textContent =
-      localStorage.getItem("userScore")
-    document.querySelector("#scored-comp").textContent =
-      localStorage.getItem("compScore")
-  } else {
-    resetRender()
-    document.querySelector("#scored-user").textContent =
-      localStorage.getItem("userScore")
-    document.querySelector("#scored-comp").textContent =
-      localStorage.getItem("compScore")
-  }
+  document.querySelector(".main-body").remove()
+  body.insertAdjacentHTML("afterbegin", endPageTxt)
 }
 
 initialPageRender()
@@ -276,7 +275,7 @@ body.addEventListener("click", function (e) {
     scoreUser.textContent = localStorage.getItem("userScore")
     scoreComp.textContent = localStorage.getItem("compScore")
     resultPage = resultsPageContent(userSelect, compSelect, winnerCheck)
-    resultsPageRender(resultPage)
+    resultsPageRender(winnerCheck, resultPage)
   }
 
   if (e.target.classList.contains("reset-btn")) {
