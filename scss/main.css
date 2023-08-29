@@ -447,7 +447,7 @@ main {
 }
 .popup .exit-btn:hover {
   transition-duration: 0.5s;
-  transform: translateY(-10px);
+  opacity: 0.7;
 }
 .popup .rules-content {
   height: 100%;
