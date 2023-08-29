@@ -270,6 +270,10 @@ main {
   align-self: flex-end;
   transform: translateY(30%);
 }
+.choose-buttons :hover {
+  transition-duration: 0.5s;
+  opacity: 0.9;
+}
 
 .rock {
   border: 10px solid #0074b6;
@@ -350,6 +354,10 @@ main {
   padding: 16px 36px;
   border-radius: 9px;
   border: none;
+}
+.pick-result .reset-btn:hover {
+  transition-duration: 0.5s;
+  transform: translateY(-10px);
 }
 
 @keyframes winnerAnimation {
@@ -437,6 +445,10 @@ main {
   font-family: cursive;
   font-size: 44px;
 }
+.popup .exit-btn:hover {
+  transition-duration: 0.5s;
+  transform: translateY(-10px);
+}
 .popup .rules-content {
   height: 100%;
 }
@@ -477,6 +489,11 @@ footer {
   border: 2px solid #fff;
   background: rgba(217, 217, 217, 0);
   padding: 10px 20px;
+}
+
+.footer-btn:hover {
+  transition-duration: 0.5s;
+  transform: translateY(-10px);
 }
 
 #next-btn {
